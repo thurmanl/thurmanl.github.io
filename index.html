@@ -1,9 +1,47 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <link rel="stylesheet" href="app.css">
+  </head>
+  <body>
+    <!--Navigation bar-->
+    <div id="nav-placeholder">
+    
+    </div>
+    
+    <script>
+      $(function () {
+        $("#nav-placeholder").load("nav.html", function () {
+          $(this).trigger("pagecreate");
+        });
+      });
+    </script>
+    <!--end of Navigation bar-->
 
-<body>
-  <h1>Hello World</h1>
-  <p>I'm hosted with GitHub Pages.</p>
-</body>
+    <div id="home">
+      <div id="home-display">
+        <div id="display-title">
+          <h1>Logan Thurman</h1>
+          <h4>Software Engineer</h4>
+        </div>
+        <div id="display-top">
+          <img src="./images/me.png" alt="self portrait" width="40%" />
+          <div id="display-links">
+            <div class="disp-link">
+              <a class="d-link" href="resume.html">RESUME</a>
+            </div>
+            <div class="disp-link">
+              <a class="d-link" href="about.html">ABOUT</a>
+            </div>
+            <div class="disp-link">
+              <a class="d-link" href="games.html">GAMES</a>
+            </div>
+          </div>
+        </div>
+        <div id="box"></div>
+      </div>
+    </div>
+  </body>
 
 </html>

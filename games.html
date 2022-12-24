@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <link rel="stylesheet" href="app.css">
+  </head>
+
+  <body>
+    <div id = "games-background">
+      <!--Navigation bar-->
+      <div id="nav-placeholder">
+
+      </div>
+
+      <script>
+        $(function () {
+          $("#nav-placeholder").load("nav.html");
+        });
+      </script>
+      <!--end of Navigation bar-->
+
+      <script>
+        function hoverB(element) {
+          element.setAttribute('src', "../images/Boats_gameplay.gif");
+        }
+
+        function unhoverB(element) {
+          element.setAttribute('src', "../images/title.png");
+        }
+
+        function hoverG(element) {
+          element.setAttribute('src', "../images/gifted_gameplay.gif");
+        }
+
+        function unhoverG(element) {
+          element.setAttribute('src', "../images/gifted_logo.png");
+        }
+
+        function hoverC(element) {
+          element.setAttribute('src', "../images/cosmo_gameplay.gif");
+        }
+
+        function unhoverC(element) {
+          element.setAttribute('src', "../images/cosmo_menu.png");
+        }
+
+        function hoverW(element) {
+          element.setAttribute('src', "../images/waves_gameplay.gif");
+        }
+
+        function unhoverW(element) {
+          element.setAttribute('src', "../images/waves.png");
+        }
+      </script>
+
+      <div id="games-page">
+        <div id="games_title">
+          <h1>My Games</h1>
+          <h5>Made in Unity</h5>
+        </div>
+        <div id="games-display">
+          <div class="game">
+            <a href="/Cosmo_Web"><img src="../images/cosmo_menu.png" width="400px" onmouseover="hoverC(this);"
+                onmouseout="unhoverC(this);"></img></a>
+            <h4>Play as BYU's mascot, Cosmo the Cougar, as you sweep the buildings of campus. Armed with a rifle
+              that shoots globs of hand-sanitizer and your trusty calc textbook, can you completely sanitize every level??
+              Challenge not enough for you? Try to climb your way up the high score chart!
+            </h4>
+          </div>
+          <div class = "game">
+            <a href="/BOATS"><img src="../images/title.png" width="400px" onmouseover="hoverB(this);"
+                onmouseout="unhoverB(this);"></img></a>
+            <h4>Intense 2-player boat battle! Play best 3 out of 5 rounds! With upgrades between each round,
+               anything can happen!</h4>
+          </div>
+
+          <div class="game">
+            <a href="/Gifted_Web"><img src="../images/gifted_logo.png" width="400px" onmouseover="hoverG(this);"
+              onmouseout="unhoverG(this);"></img></a>
+              <h4>Text-based choose your own adventure game! Craft your own story as you fight monsters, gain magic abilities, 
+                acquire new weapons, and lead armies!
+              </h4>
+          </div>
+
+          <div class="game">
+            <a href="/Waves_Web"><img src="../images/waves.png" width="400px" onmouseover="hoverW(this);"
+                onmouseout="unhoverW(this);"></img></a>
+            <h4>Build a sandcastle to defend against the growing waves! Make sure to watch out for the crabs! 
+              You can build turrets out of items you find on the beach!
+            </h4>
+          </div>
+          
+
+        </div>
+      </div>
+    </div>
+  </body>
+
+</html>
