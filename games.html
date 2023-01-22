@@ -51,6 +51,14 @@
         function unhoverW(element) {
           element.setAttribute('src', "../images/waves.png");
         }
+
+        function hoverM(element) {
+          element.setAttribute('src', "../images/meta_gameplay.gif");
+        }
+
+        function unhoverM(element) {
+          element.setAttribute('src', "../images/meta_desktop.png");
+        }
       </script>
 
       <div id="games-page">
@@ -86,6 +94,12 @@
                 onmouseout="unhoverW(this);"></img></a>
             <h4>Build a sandcastle to defend against the growing waves! Make sure to watch out for the crabs! 
               You can build turrets out of items you find on the beach!
+            </h4>
+          </div> 
+          <div class="game">
+            <a href="meta.html"><img src="../images/meta_desktop.png" width="400px" onmouseover="hoverM(this);"
+                onmouseout="unhoverM(this);"></img></a>
+            <h4>A funny little game me and two friends made in 24 hours for a game jam.
             </h4>
           </div> 
           
