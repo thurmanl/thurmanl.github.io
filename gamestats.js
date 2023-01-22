@@ -22,3 +22,11 @@ window.navigator.addEventListener('navigate', (event) => {
   var page = path.split("/").pop();
   alert("page navigation on" + page);
 });
+
+setInterval(1, reportPage);
+
+function reportPage(){
+  var path = window.location.pathname;
+  var page = path.split("/").pop();
+  console.log("on page:" + page);
+}
