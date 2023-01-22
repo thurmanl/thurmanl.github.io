@@ -3,6 +3,12 @@ window.addEventListener('load', (event) => {
   alert('page fully loaded and parsed');
 });
 
+window.addEventListener('pageshow', (event) => {
+  var path = window.location.pathname;
+  var page = path.split("/").pop();
+  alert("on page " + page);
+});
+
 window.onunload = function() {
     //myfun();
     var path = window.location.pathname;
@@ -13,5 +19,5 @@ window.onunload = function() {
 navigation.addEventListener('navigate', (event) => {
   var path = window.location.pathname;
   var page = path.split("/").pop();
-  alert("Left page " + page);
+  alert("page navigation on" + page);
 });
