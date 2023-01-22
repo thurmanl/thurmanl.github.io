@@ -17,7 +17,7 @@ window.onunload = function() {
     alert("Left page " + page);
 }
 
-window.navigation.addEventListener('navigate', (event) => {
+window.navigator.addEventListener('navigate', (event) => {
   var path = window.location.pathname;
   var page = path.split("/").pop();
   alert("page navigation on" + page);
