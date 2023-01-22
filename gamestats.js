@@ -8,22 +8,21 @@ window.addEventListener('pageshow', (event) => {
   var path = window.location.pathname;
   var page = path.split("/").pop();
   alert("on page " + page);
+  setInterval(1, reportPage);
 });
 
-window.onunload = function() {
-    //myfun();
-    var path = window.location.pathname;
-    var page = path.split("/").pop();
-    alert("Left page " + page);
-}
+// window.onunload = function() {
+//     //myfun();
+//     var path = window.location.pathname;
+//     var page = path.split("/").pop();
+//     alert("Left page " + page);
+// }
 
-window.navigator.addEventListener('navigate', (event) => {
-  var path = window.location.pathname;
-  var page = path.split("/").pop();
-  alert("page navigation on" + page);
-});
-
-setInterval(1, reportPage);
+// window.navigator.addEventListener('navigate', (event) => {
+//   var path = window.location.pathname;
+//   var page = path.split("/").pop();
+//   alert("page navigation on" + page);
+// });
 
 function reportPage(){
   var path = window.location.pathname;
