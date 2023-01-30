@@ -59,6 +59,14 @@
         function unhoverM(element) {
           element.setAttribute('src', "../images/meta_desktop.png");
         }
+
+        function hoverD(element) {
+          element.setAttribute('src', "../images/Dave.gif");
+        }
+
+        function unhoverD(element) {
+          element.setAttribute('src', "../images/Dave.png");
+        }
       </script>
 
       <div id="games-page">
@@ -86,7 +94,7 @@
             <a href="gifted.html"><img src="../images/gifted_logo.png" width="400px" onmouseover="hoverG(this);"
               onmouseout="unhoverG(this);"></img></a>
               <h4>Text-based choose your own adventure game! Craft your own story as you fight monsters, gain magic abilities, 
-                acquire new weapons, and lead armies!
+                acquire new weapons, and lead armies!              Note: F: Change font ; M: Change music
               </h4>
           </div>
           <div class="game">
@@ -102,7 +110,12 @@
             <h4>A funny little game me and two friends made in 24 hours for a game jam.
             </h4>
           </div> 
-          
+          <div class="game">
+            <a href="dave.html"><img src="../images/Dave.png" width="400px" onmouseover="hoverD(this);"
+                onmouseout="unhoverD(this);"></img></a>
+            <h4>Another 24-hour game jam game. Help Dave create an awesome rave in his cave by collecting gems!
+            </h4>
+          </div>
 
         </div>
       </div>

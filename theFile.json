@@ -1,0 +1,11 @@
+{
+  "hello": "world",
+  "myArray": [
+    "entry1",
+    "entry2",
+    "entry3"
+  ],
+  "myNestedObject": {
+    "nestedHello": "nestedWorld"
+  }
+}
