@@ -7,6 +7,9 @@ setInterval(function(){ reportPage();}, 1000);
 var lastPage;
 
 function reportPage() {
+  if(!interacted){
+    return;
+  }
   var path = window.location.pathname;
   var page = path.split("/").pop().split(".")[0];
   if(page == "" || page == null){
@@ -25,62 +28,39 @@ function postPage(page, isNew){
   });
 
   fetch(uri, {
-    method: 'POST', // *GET, POST, PUT, DELETE, etc.
-    mode: 'cors', // no-cors, *cors, same-origin
+    method: 'POST',
+    mode: 'cors',
     redirect: "follow",
-    // headers: {
-    //   'Accept': 'application/json',
-    //   'Content-Type': 'application/json'
-    // },
     body: JSON.stringify({ "page": page })
-    // headers: {
-    //   'Accept': 'application/json'
-    // }
   })
     .then(response => response.text())
     //.then(text => console.log(text))
 }
 
-// function testJson(){
-//   // const fs = require('fs');
-//   // const path = require('path');
+var interacted;
+document.addEventListener('visibilitychange', function (event) {
+  if (document.hidden) {
+    interacted = false;
+  } else {
+    interact();
+  }
+});
 
-//   const testObject = {
-//     hello: 'world',
-//     myArray: [
-//       'entry1',
-//       'entry2',
-//       'entry3',
-//     ],
-//     myNestedObject: {
-//       nestedHello: 'nestedWorld',
-//     },
-//   };
+onmousemove = (event) => {
+  interact();
+};
 
-//   const testJsonString = JSON.stringify(testObject, null, 2);
-//   console.log(testJsonString);
+addEventListener('keydown', (event) => {
+  interact();
+});
 
-//   fetch("theFile.json") 
-//   .then( function(data){return data.json() })
-//   .then(function(response){console.log(response)});
-//   // const filePath = path.join(process.cwd(), 'test.json');
+var timeoutID;
+function interact(){
+  interacted = true;
+  clearTimeout(timeoutID);
+  timeoutID = setTimeout(resetInteracted, 30000);
+}
 
-//   // fs.writeFile(filePath, testJsonString, (err) => {
-//   //   if (err) {
-//   //     console.error(err);
-//   //   } else {
-//   //     console.log('File written successfully');
-//   //   }
-//   // });
-// }
-
-// document.addEventListener('visibilitychange', function (event) {
-//   if (document.hidden) {
-//     interacted = false;
-//   } else {
-//     interacted = true;
-//   }
-// });
-
-// var interacted;
-// onmousemove = (event) => {interacted = true; };
+function resetInteracted(){
+  interacted = false;
+}
