@@ -1,11 +1,45 @@
 // testJson();
-// setInterval(function(){ reportPage();}, 1000);
 
-// function reportPage() {
-//   var path = window.location.pathname;
-//   var page = path.split("/").pop();
-//   console.log("on page " + page);
-// }
+const url = "https://script.google.com/macros/s/AKfycbxM63BRpVV9xwowc7yBJrY_yfAJ9CiiCMep4x4agUOOUXU9yZf-zBG017WF3VKLbCw/exec";
+
+setInterval(function(){ reportPage();}, 1000);
+
+var lastPage;
+
+function reportPage() {
+  var path = window.location.pathname;
+  var page = path.split("/").pop().split(".")[0];
+  if(page == "" || page == null){
+    page = "home";
+  }
+  let isNew = (page == lastPage) ? "n" : "y";
+
+  postPage(page, isNew);
+  lastPage = page;
+}
+
+function postPage(page, isNew){
+  let uri = url + "\?" + new URLSearchParams({
+    page: page,
+    isNew: isNew
+  });
+
+  fetch(uri, {
+    method: 'POST', // *GET, POST, PUT, DELETE, etc.
+    mode: 'cors', // no-cors, *cors, same-origin
+    redirect: "follow",
+    // headers: {
+    //   'Accept': 'application/json',
+    //   'Content-Type': 'application/json'
+    // },
+    body: JSON.stringify({ "page": page })
+    // headers: {
+    //   'Accept': 'application/json'
+    // }
+  })
+    .then(response => response.text())
+    .then(text => console.log(text))
+}
 
 // function testJson(){
 //   // const fs = require('fs');
