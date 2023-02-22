@@ -1,6 +1,6 @@
 // testJson();
 
-const url = "https://script.google.com/macros/s/AKfycbxM63BRpVV9xwowc7yBJrY_yfAJ9CiiCMep4x4agUOOUXU9yZf-zBG017WF3VKLbCw/exec";
+const url = "https://script.google.com/macros/s/AKfycbws6qFDTHDVMfWuRsMBMg3Gd7DAL844lOX3s0un196ujuiyL-1mM-g9VoD7b9MnnZHG/exec";
 
 setInterval(function(){ reportPage();}, 1000);
 
@@ -38,7 +38,7 @@ function postPage(page, isNew){
     // }
   })
     .then(response => response.text())
-    .then(text => console.log(text))
+    //.then(text => console.log(text))
 }
 
 // function testJson(){
