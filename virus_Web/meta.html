@@ -8,6 +8,17 @@
     <link rel="stylesheet" href="TemplateData/style.css">
   </head>
   <body>
+    <!--Navigation bar-->
+    <div id="nav-placeholder">
+    
+    </div>
+    
+    <script>
+      $(function () {
+        $("#nav-placeholder").load("../gamenav.html");
+      });
+    </script>
+    <!--end of Navigation bar-->
     <div id="unity-container" class="unity-desktop">
       <canvas id="unity-canvas" width=1280 height=900></canvas>
       <div id="unity-loading-bar">
