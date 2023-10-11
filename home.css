@@ -1,0 +1,112 @@
+html,
+body {
+  margin: 0px;
+  height: 100%;
+}
+
+body {
+  background-image: url(images/me_look_granada_best.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: 100% 0%;
+  /* font-family:Verdana, Geneva, Tahoma, sans-serif */
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+#center-letters {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: column;
+  height: 50%;
+  margin-bottom: 100px;
+  width: 100%;
+}
+
+hr {
+  width: 50%;
+  border: 2px solid black;
+}
+
+#name-text {
+  font-size: 5em;
+  font-weight: normal;
+}
+
+#buttons-section {
+  display: flex;
+  gap: 80px;
+  justify-content: center;
+  width: 100%;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.btn-one {
+  color: #FFF;
+  transition: all 0.3s;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  width: 160px;
+  line-height: 50px;
+  height: 50px;
+  border: none;
+  font-size: 1.5em;
+}
+
+.btn-one:hover {
+  cursor: pointer;
+}
+
+.btn-one span {
+  transition: all 0.3s;
+  color: black;
+}
+
+.btn-one::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.3s;
+  border-top-width: 3px;
+  border-bottom-width: 3px;
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-top-color: rgba(255, 255, 255, 0.5);
+  border-bottom-color: rgba(255, 255, 255, 0.5);
+  transform: scale(0.1, 1);
+}
+
+.btn-one:hover span {
+  letter-spacing: 2px;
+  color: white;
+}
+
+.btn-one:hover::before {
+  opacity: 1;
+  transform: scale(1, 1);
+}
+
+.btn-one::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: all 0.3s;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.btn-one:hover::after {
+  opacity: 0;
+  transform: scale(0.1, 1);
+}
+
+/*# sourceMappingURL=home.css.map */

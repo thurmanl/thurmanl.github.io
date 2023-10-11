@@ -1,46 +1,36 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-    <link rel="stylesheet" href="app.css">
-  </head>
-  <body>
-    <!--Navigation bar-->
-    <div id="nav-placeholder">
-    
-    </div>
-    
-    <script>
-      $(function () {
-        $("#nav-placeholder").load("nav.html", function () {
-          $(this).trigger("pagecreate");
-        });
-      });
-    </script>
-    <!--end of Navigation bar-->
+  
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="home.js"></script>
+  <link rel="stylesheet" href="home.css">
+  
+</head>
 
-    <div id="home">
-      <div id="home-display">
-        <div id="display-title">
-          <h1>Logan Thurman</h1>
-          <h4>Software Engineer</h4>
-        </div>
-        <div id="display-top">
-          <img src="./images/me.png" alt="self portrait" width="40%" />
-          <div id="display-links">
-            <div class="disp-link">
-              <a class="d-link" href="resume.html">RESUME</a>
-            </div>
-            <div class="disp-link">
-              <a class="d-link" href="about.html">ABOUT</a>
-            </div>
-            <div class="disp-link">
-              <a class="d-link" href="games.html">GAMES</a>
-            </div>
-          </div>
-        </div>
-        <div id="box"></div>
-      </div>
+  <body>
+    <div id="center-letters">
+      <hr>
+      <h1 id="name-text"></h1>
+      <hr>
+    </div>
+    <div id="buttons-section">
+      <a href="resume.html">
+        <button class="btn-one">
+          <span>Resumé</span>
+        </button>
+      </a>
+      <a href="about.html">
+        <button class="btn-one">
+          <span>About</span>
+        </button>
+      </a>
+      <a href="arcade.html">
+        <button class="btn-one">
+          <span>Games</span>
+        </button>
+      </a>
     </div>
   </body>
 

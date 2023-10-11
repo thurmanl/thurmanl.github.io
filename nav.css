@@ -1,0 +1,88 @@
+.top-banner {
+  width: 100%;
+  height: 100px;
+  background-color: #a0cbfd;
+  display: flex;
+  align-items: center;
+}
+
+.banner-image {
+  height: 100px;
+  object-fit: cover;
+  transform: scaleX(-1);
+}
+
+.banner-image-link {
+  position: absolute;
+}
+
+.nav-buttons {
+  display: flex;
+  justify-content: end;
+  flex-grow: 2;
+  gap: 30px;
+  margin-right: 50px;
+}
+
+.btn-one {
+  color: #FFF;
+  transition: all 0.3s;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  width: 160px;
+  line-height: 50px;
+  height: 50px;
+  border: none;
+  font-size: 1.5em;
+}
+
+.btn-one:hover {
+  cursor: pointer;
+}
+
+.btn-one span {
+  transition: all 0.3s;
+  color: #425f7e;
+}
+
+.btn-one::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.3s;
+  border-bottom-width: 3px;
+  border-bottom-style: solid;
+  border-bottom-color: rgba(255, 255, 255, 0.5);
+  transform: scale(0.1, 1);
+}
+
+.btn-one:hover span {
+  letter-spacing: 2px;
+  color: white;
+}
+
+.btn-one:hover::before {
+  opacity: 1;
+  transform: scale(1, 1);
+}
+
+.btn-one::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: all 0.3s;
+}
+
+.btn-one:hover::after {
+  opacity: 0;
+  transform: scale(0.1, 1);
+}

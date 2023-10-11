@@ -3,10 +3,15 @@
 
 <head>
   <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-  <link rel="stylesheet" href="app.css">
+  <script src="about.js"></script>
+  <link rel="stylesheet" href="about.css">
+  <link rel="stylesheet" type="text/css" href="slick/slick.css" />
+  <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
+
 </head>
 
-<body id="about_body">
+<body  onload="randomizePano()">
+
   <!--Navigation bar-->
   <div id="nav-placeholder">
 
@@ -19,45 +24,83 @@
   </script>
   <!--end of Navigation bar-->
 
-  <div id="about">
-    <div class="about_half">
-      <div class="about_text">
-        <div class="info_item">
-          <h2>MY NAME</h2>
-          <h3>Logan Thurman</h3>
-        </div>
-        <div class="info_item">
-          <h2>I AM</h2>
-          <h3>A Software Engineering Student</h3>
-        </div>
-        <div class="info_item">
-          <h2>I'VE LIVED</h2>
-          <h3>In Oregon, Guatemala, Utah, and Spain.</h3>
-        </div>
-        <div class="info_item">
-          <h2>MY INSPIRATION</h2>
-          <h3>The joy of creation and the challenge of analytical problem solving.</h3>
+  <div id="about_body">
+    <div id="title">
+      <h2 id="about">About</h2>
+    </div>
+    <img src="images/me_zions.jpg" class="top-image">
+    <div class="line-break"></div>
+    <div class="words">
+      <h4>Me in a Nutshell</h4>
+      <p>
+        My name is Logan Thurman. I grew up in Southern Oregon, but I was born in the Bay Area, which may have somehow influenced
+        my entering into software &#128064;. I value work ethic, and hold myself and those around me to high standards 
+        of integrity. I look to cultivate teamwork, equal consideration of ideas, and personal expression. That being said, 
+        we have a great planet, so I'm here to enjoy life 😄 and help others when I can so they can do they same!
+      </p>
+    </div>
+    <div class="skew-box">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="images/BYU_stadium.png" class="flip-image" id="image1" onmouseover="randomize('image1b')" />
+          </div>
+          <div class="flip-card-back">
+            <img class="flip-image" id="image1b" onmouseleave="randomize('image1')">
+          </div>
         </div>
       </div>
-      <img id="me_photo" src="./images/me_granada.jpg" />
-    </div>    
-    <div class="about_half">
-      <img id="other_photo" src="./images/laptop.jpg" />
-      <div class="about_paragraph">
-        <h3>I am a junior studying Computer Science with an emphasis in Software Engineering and a minor in Spanish at Brigham
-          Young University in Provo, Utah. I am excited by utilizing the software tools that form the blood of modern society. </h3>
-    
-          <h3>I love creation, of which I believe programming to be the most powerful kind. Creating programs with code to make
-          people's lives more efficient, engaging and easy inspires me. Identifying a problem and creating a creative and clear
-          solution excites me.</h3>
-    
-          <h3>I have experience with the major Object Oriented Languages, including various applications in C++, 
-            backend with Java and Javascript, web programming with React and Node, data analysis in Python, 
-            Android applications, and game design with Unity C#.</h3>
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="images/me_professional.png" class="flip-image" id="image2" onmouseover="randomize('image2b')" />
+          </div>
+          <div class="flip-card-back">
+            <img class="flip-image" id="image2b" onmouseleave="randomize('image2')">
+          </div>
+        </div>
+      </div>
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="images/lucid.jpg" class="flip-image" id="image3" onmouseover="randomize('image3b')" />
+          </div>
+          <div class="flip-card-back">
+            <img class="flip-image" id="image3b" onmouseleave="randomize('image3')">
+          </div>
+        </div>
       </div>
     </div>
+    <div class="code-section"> 
+      <div class="words code-words">
+        <h4>My Philosophy on Code</h4>
+        <p>
+          I first learned to code by making computer games, a hobby which, as you can see in the Arcade page, has continued
+          through college.
+          What fascinates me about software is how you can use the analytical and creative sides of the brain at the same
+          time.
+          I love solving problems, and I love creating programs that make humans' lives easier!
+        </p>
+      </div>
+    </div>
+    <img id="pano" class="below-code-image" src="images/pan_granada.jpg"></img>
+    <div class="words bottom-words">
+      <h4>The World is Smaller Than We Think</h4>
+      <p>
+        Before starting at Brigham Young University, I took a 2 year gap to volunteer in Guatemala,
+        where I learned fluent Spanish. That has since spurred a collection of international travels, 
+        including a study abroad in Spain, where more than the sights or experiences I value the connections 
+        I've made with people all over the world. However in respect for those people's privacy, I'll just show 
+        the sights here :D
+      </p>
+    </div>      
+    <div id="slick"></div>
+    <div class="line-break"></div>
   </div>
 
+      <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+      <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+      <script type="text/javascript" src="slick/slick.min.js"></script>
 </body>
 
 </html>

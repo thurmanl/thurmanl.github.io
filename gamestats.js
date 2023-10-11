@@ -1,7 +1,6 @@
 // testJson();
 
-const url = "https://script.google.com/macros/s/AKfycbws6qFDTHDVMfWuRsMBMg3Gd7DAL844lOX3s0un196ujuiyL-1mM-g9VoD7b9MnnZHG/exec";
-
+const url = "https://script.google.com/macros/s/AKfycbyccIonUImrwCyzAhI89Og8_2cHEyflA3QPnjG2DswVoBudm3IdK6Fz56KeoJIVX2cv/exec"
 setInterval(function(){ reportPage();}, 1000);
 
 var lastPage;

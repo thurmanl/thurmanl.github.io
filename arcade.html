@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="gameSorting.js"></script>
+  <link rel="stylesheet" href="arcade.css">
+</head>
+
+<body>
+  <!--Navigation bar-->
+  <div id="nav-placeholder">
+  
+  </div>
+  
+  <script>
+    $(function () {
+      $("#nav-placeholder").load("nav.html");
+    });
+  </script>
+  <!--end of Navigation bar-->
+  <div id="games-background">
+
+    <script>
+      function hover(element, gameName){
+        element.setAttribute('src', "../images/" + gameName + "_gameplay.gif");
+      }
+
+      function unHover(element, gameName){
+        element.setAttribute('src', "../images/" + gameName + "_menu.png");
+      }
+    </script>
+
+    <div id="games-page">
+      
+      <div id="games-display">
+        <div id="games_title">
+          <h2 id="arcade">Arcade</h2>
+        </div>
+        <h4 id="loading-element">Loading ...</h4>
+        <!-- games put here by the js -->
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

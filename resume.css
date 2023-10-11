@@ -1,0 +1,87 @@
+/* Resume Styles */
+*{
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  margin: 0px;
+  height: 100%;
+}
+
+#resume-background {
+  display: flex;
+  align-items: center;
+}
+
+#left-section {
+  background-image: url("images/hex_right.jpg");
+  background-size: cover;
+  margin: 0;
+  flex: 1;
+  height: 1426px;
+  transform: scaleX(-1);
+}
+
+#right-section {
+  background-image: url("images/hex_right.jpg");
+  background-size: cover;
+  margin: 0;
+  flex: 1;
+  height: 1426px;
+}
+
+#resume-page {
+  flex: 2;
+  background-color: white;
+  width: 700px;
+  min-width: 700px;
+  margin: 0px 40px;
+}
+
+#resume-header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#resume-page h1 {
+  padding: 5%;
+}
+
+#resume-page ul {
+  padding-left: 5%;
+  padding-bottom: 25px;
+}
+
+#resume-page a {
+  text-decoration: none;
+}
+
+#resume-page a:hover {
+  color: var(--secondary);
+}
+
+.centered {
+  text-align: center;
+}
+
+.horizontal-display {
+  display: flex;
+  justify-content: space-between;
+}
+
+#skills {
+  display: flex;
+  justify-content: space-around;
+}
+
+.skills-section h4 {
+  text-align: center;
+}
+
+hr {
+  margin-bottom: 8px;
+}

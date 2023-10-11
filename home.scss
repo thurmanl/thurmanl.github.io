@@ -1,0 +1,248 @@
+html,
+body {
+  margin: 0px;
+  height: 100%;
+}
+
+body {
+  background-image: url(images/me_look_granada_best.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: 100% 0%;
+  /* font-family:Verdana, Geneva, Tahoma, sans-serif */
+  font-family: Georgia, 'Times New Roman', Times, serif; 
+}
+
+#center-letters  {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: column;
+  height: 50%;
+  margin-bottom: 100px;
+  width: 100%;
+}
+
+hr {
+  width: 50%;
+  border: 2px solid black;
+}
+
+#name-text {
+  font-size: 5em;
+  font-weight: normal;
+}
+
+#buttons-section {
+  display: flex;
+  gap: 80px;
+  justify-content: center;
+  width:100%;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.btn-2 {
+  letter-spacing: 0;
+  width: 160px;
+  height: 60px;
+  line-height: 50px;
+  border: none;
+  font-size: 1.5em;
+  background-color: rgba(255, 255, 255, 0);
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.btn-2:hover,
+.btn-2:active {
+  letter-spacing: 5px;
+}
+
+.btn-2:after,
+.btn-2:before {
+  backface-visibility: hidden;
+  border: 2px solid rgba(#000000, 0);
+  bottom: 0px;
+  content: " ";
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  transition: all 280ms ease-in-out;
+  width: 0;
+}
+
+.btn-2:hover:after,
+.btn-2:hover:before {
+  backface-visibility: hidden;
+  border-color: #000000;
+  transition: width 350ms ease-in-out;
+  width: 70%;
+}
+
+.btn-2:hover:before {
+  bottom: auto;
+  top: 0;
+  width: 70%;
+}
+
+
+
+.btn-3 {
+  /* background-color: rgba(255, 255, 255, 0.6); */
+  border-radius: 12px;
+  width: 160px;
+  height: 60px;
+  border: none;
+  font-size: 1.5em;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0.4) 50%, #fffca4 50%) right;
+  background-size: 200%;
+  border: 2px solid black;
+}
+
+.btn-3:hover {
+  background-position: left;
+  border: 4px solid black;
+}
+
+.btn {
+  width: 160px;
+  height: 60px;
+  border: none;
+  font-size: 1.5em;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.btn:hover {
+  transition: background-color 1s linear;
+  background-color: rgba(255, 255, 255, 0.7);
+  font-size: 1.6em;
+}
+
+@mixin btn-border-drawing($color: #ccc, $hover: black, $width: 2px, $vertical: top, $horizontal: left, $duration: 0.25s) {
+  box-shadow: inset 0 0 0 $width $color;
+  // color: $color;
+  // transition: color $duration calc($duration / 3);
+  position: relative;
+
+  &::before,
+  &::after {
+    border: 0 solid transparent;
+    box-sizing: border-box;
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    width: 0;
+    height: 0;
+
+    #{$vertical}: 0;
+    #{$horizontal}: 0;
+  }
+
+  &::before {
+    $h-side: if($horizontal =='left', 'right', 'left');
+
+    border-#{$vertical}-width: $width;
+    border-#{$h-side}-width: $width;
+  }
+
+  &::after {
+    $v-side: if($vertical =='top', 'bottom', 'top');
+
+    border-#{$v-side}-width: $width;
+    border-#{$horizontal}-width: $width;
+  }
+
+  &:hover {
+    //color: $hover;
+
+    &::before,
+    &::after {
+      border-color: $hover;
+      transition: border-color 0s, width $duration, height $duration;
+      width: 100%;
+      height: 100%;
+    }
+
+    &::before {
+      transition-delay: 0s, 0s, $duration;
+    }
+
+    &::after {
+      transition-delay: 0s, $duration, 0s;
+    }
+  }
+}
+
+.draw-border {
+  @include btn-border-drawing(#000000, #ffe593, 4px, bottom, left);
+}
+
+
+.btn-one {
+  color: #FFF;
+  transition: all 0.3s;
+  position: relative;
+  background-color: rgba(#000000, 0);
+  width: 160px;
+  line-height: 50px;
+  height: 50px;
+  border: none;
+  font-size: 1.5em;
+}
+
+.btn-one:hover {
+  cursor: pointer;
+}
+
+.btn-one span {
+  transition: all 0.3s;
+  color: black
+}
+
+.btn-one::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.3s;
+  border-top-width: 3px;
+  border-bottom-width: 3px;
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-top-color: rgba(255, 255, 255, 0.5);
+  border-bottom-color: rgba(255, 255, 255, 0.5);
+  transform: scale(0.1, 1);
+  border-radius: 12px;
+}
+
+.btn-one:hover span {
+  letter-spacing: 2px;
+  color: white;
+}
+
+.btn-one:hover::before {
+  opacity: 1;
+  transform: scale(1, 1);
+}
+
+.btn-one::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: all 0.3s;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.btn-one:hover::after {
+  opacity: 0;
+  transform: scale(0.1, 1);
+}
