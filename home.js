@@ -1,5 +1,5 @@
 window.onload = function () {
-  var testing = true;
+  var testing = false;
 
   var bod = document.body;
   var hrs = document.querySelectorAll('hr')

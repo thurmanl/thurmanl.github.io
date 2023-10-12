@@ -5,6 +5,16 @@ $(document).ready(function () {
   getPlayTimes();
 });
 
+function hover(element, gameName) {
+  console.log("hovered")
+  element.setAttribute('src', "../images/" + gameName + "_gameplay.gif");
+}
+
+function unHover(element, gameName) {
+  console.log("unhovered")
+  element.setAttribute('src', "../images/" + gameName + "_menu.png");
+}
+
 function createDisplay(playTimes){
   playTimes.forEach(element => {
     console.log(element[0] + " has been played for " + element[1] + " minutes")
@@ -12,19 +22,59 @@ function createDisplay(playTimes){
 
   var pDiv = document.getElementById("games-display");
 
+  var odd = false;
   playTimes.forEach(element => {
-    pDiv.innerHTML += `
-      <div class="game">
-          <a href="` + element[0] + `_Web/` + element[0] + `.html"><img src="../images/` + element[0] + `_menu.png" width="400px" onmouseover="hover(this, ` + element[0] + `);"
-              onmouseout="unHover(this, ` + element[0] + `);"></img></a>
-          <div class = "game-description">
-            <h4> ` + gameDescriptions[element[0]] + `</h4>
-            <div class="short-strip"></div>
-            <h4> Total Play Time: ` + element[1] + ` minutes</h4>
-          </div>
-        </div>
+    // var imageChangeCommand = `this.setAttribute('src', '../images/` + element[0] + `_gameplay.gif')`
+    // var string = `
+    //   <div class="game">
+    //       <a href="` + element[0] + `_Web/` + element[0] + `.html">
+    //         <img src="../images/` + element[0] + `_menu.png" width="400px" 
+    //           onmouseover="` + imageChangeCommand + `"
+    //           >
+    //         </img>
+    //       </a>
+    //       <div class = "game-description">
+    //         <h4> ` + gameDescriptions[element[0]] + `</h4>
+    //         <div class="short-strip"></div>
+    //         <h4> Total Play Time: ` + element[1] + ` minutes</h4>
+    //       </div>
+    //     </div>
+    //   <div class="long-strip"></div>
+    // `;
+    // console.log(string)
+    // pDiv.innerHTML += string;
+    var hoverCommand = `onmouseover = "this.setAttribute('src', '../images/` + element[0] + `_gameplay.gif')"`
+    var unhoverCommand = `onmouseleave = "this.setAttribute('src', '../images/` + element[0] + `_menu.png')"`
+    var image = `
+    <a href="` + element[0] + `_Web/` + element[0] + `.html"><img src="../images/` + element[0] + `_menu.png" width="400px"
+    ` + hoverCommand + ` 
+    ` + unhoverCommand + `
+    ></img></a>`
+    var text = `
+    <div class = "game-description">
+      <h4> ` + gameDescriptions[element[0]] + `</h4>
       <div class="short-strip"></div>
-    `
+      <h4> Total Play Time: ` + element[1] + ` minutes</h4>
+    </div>`
+    var addedHtml = ""
+    if(odd){
+      addedHtml = `
+      <div class="game">
+          ` + image + `
+          ` + text + `
+        </div>
+      <div class="long-strip"></div>`;
+    }
+    else {
+      addedHtml = `
+      <div class="game">
+          ` + text + `
+          ` + image + `
+        </div>
+      <div class="long-strip"></div>`;
+    }
+    odd = !odd;
+    pDiv.innerHTML += addedHtml;
   })
   document.getElementById("loading-element").style.display = "none";
 }
