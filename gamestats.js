@@ -1,7 +1,7 @@
 // testJson();
 
-const url = "https://script.google.com/macros/s/AKfycbyccIonUImrwCyzAhI89Og8_2cHEyflA3QPnjG2DswVoBudm3IdK6Fz56KeoJIVX2cv/exec"
-setInterval(function(){ reportPage();}, 1000);
+const url = "https://script.google.com/macros/s/AKfycbyZ7Okrw6JYVjxVOrosQPfgfop5tKxHprqomYBAUIZwAirO-hkY9xxEVog9FWifIgre/exec"
+setInterval(function(){ reportPage();}, 3000);
 
 var lastPage;
 

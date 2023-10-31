@@ -1,5 +1,5 @@
 
-const url = "https://script.google.com/macros/s/AKfycbyccIonUImrwCyzAhI89Og8_2cHEyflA3QPnjG2DswVoBudm3IdK6Fz56KeoJIVX2cv/exec"
+const url = "https://script.google.com/macros/s/AKfycbyZ7Okrw6JYVjxVOrosQPfgfop5tKxHprqomYBAUIZwAirO-hkY9xxEVog9FWifIgre/exec"
 
 $(document).ready(function () {
   getPlayTimes();
@@ -85,6 +85,10 @@ function getPlayTimes() {
     isNew: false
   });
 
+  getGameData(uri)
+}
+
+function getGameData(uri){
   fetch(uri, {
     method: 'POST',
     mode: 'cors',
@@ -93,16 +97,23 @@ function getPlayTimes() {
   })
     .then(response => response.text())
     .then(text => {
-      json = JSON.parse(text)
-      const playTimes = []
-      json.forEach(element => {
-        if(isGameName(element[0])){
-          playTimes.push([element[0], element[2]])
-        }
-      });
-      createDisplay(playTimes.sort((a, b) => b[1] - a[1]));
+      try {
+        console.log("trying...")
+        json = JSON.parse(text)
+        const playTimes = []
+        json.forEach(element => {
+          if (isGameName(element[0])) {
+            playTimes.push([element[0], element[2]])
+          }
+        });
+        createDisplay(playTimes.sort((a, b) => b[1] - a[1]));
+        console.log("apparently that worked")
+      } catch (error) {
+        console.log("oops getting website data didn't work")
+        setTimeout(() => getPlayTimes(), 1000)
+      }
     }
-  )
+    )
 }
 
 function isGameName(name){
