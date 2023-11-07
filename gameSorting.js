@@ -54,7 +54,7 @@ function createDisplay(playTimes){
     <div class = "game-description">
       <h4> ` + gameDescriptions[element[0]] + `</h4>
       <div class="short-strip"></div>
-      <h4> Total Play Time: ` + element[1] + ` minutes</h4>
+      <h4> Total Play Time: ` + Math.floor(element[1] / 60) + ` hours ` + element[1] % 60 + ` minutes</h4>
     </div>`
     var addedHtml = ""
     if(odd){
