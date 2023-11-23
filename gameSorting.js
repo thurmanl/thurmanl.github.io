@@ -122,6 +122,7 @@ function isGameName(name){
     name == "dave" ||
     name == "gifted" ||
     name == "waves" ||
+    name == "garten" ||
     name == "meta";
 }
 
@@ -138,4 +139,5 @@ var gameDescriptions = {
   "meta": `A funny little game me and two friends made in 24 hours for a game jam.`,
   "boats": `Intense 2-player boat battle! Play best 3 out of 5 rounds! With upgrades between each round,
             anything can happen!`,
+  "garten": `Another 24-hour game jam game. Develop your economy and build a gnome army!`,
 }
