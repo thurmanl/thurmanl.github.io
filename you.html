@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>This is for you</title>
+  <style>
+    /* Initially hide the lines */
+    .fade-in-line {
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    #containers {
+      display: flex;
+      justify-content: space-evenly;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Container for the lines -->
+  <div id="containers">
+    <div id="lines-container" class="container">
+      <button onclick="show(document.getElementById('lines-container'), lines)">Poem 1</button>
+    </div>
+    <div id="lines-container-1" class="container">
+      <button onclick="show(document.getElementById('lines-container-1'), lines2)">Poem 2</button>
+    </div>
+    <div id="lines-container-2" class="container" >
+      <button onclick="show(document.getElementById('lines-container-2'), lines3)">Poem 3</button>
+    </div>
+  </div>
+  
+
+  <script>
+    function show(container, lines){
+      var linesContent = lines.split('\n') // Add more lines as needed
+
+      // Create and append lines to the container
+      linesContent.forEach(function (content, index) {
+        var line = document.createElement('div');
+        line.textContent = content;
+        line.className = 'fade-in-line';
+        container.appendChild(line);
+
+        // Set a timeout to add the 'show' class after a delay
+        setTimeout(function () {
+          line.style.opacity = 1;
+        }, 1500 * index); // 1.5 seconds delay for each line
+      });
+    }
+
+          // Array of lines
+            var lines = `
+        If you were to tell me
+        a year ago
+        that I would find a girl
+        tall, health nut
+        incredibly cute, artistic
+        excellent chef like my mom
+        smart, ambitious, pre-med
+        unrelentingly kind
+        sincerely spiritual
+        well traveled and bilingual
+        and childishly excitable,
+        I’m not sure I would’ve had the faith
+        to dare to believe it.
+      `
+
+    var lines2 = `
+    I see my life as a canvas,
+each stroke of color representing
+a person
+a place
+an experience
+a goal
+a passion
+a season.
+The painting changes over time
+as new colors cover up old ones.
+Not sadly, mind you - it’s a happy painting
+the old colors were duly appreciated
+before they ceded to the new.
+I am content to accept that
+the constant of life is change.
+Yet still I search to find the one color
+to define the painting.
+The person to call mine
+To be in all places with me
+To experience all things with me
+The goal of my life
+The passion of my existence
+The unchanging in all seasons
+I look at my painting and wonder
+if the prominent color might remain forever
+Your Color.
+    `
+
+    var lines3 = `
+My emotions are trapped inside a steel box.
+Cold, hard steel. Emotionless.
+I’m the meticulous engineer, selecting which emotions to wire out, allow themselves to manifest.
+Contentment, even happiness. Occasional joy or passion.
+I quickly patch up any leaks that occur.
+Why do I do it? Emotions are dangerous. Emotions are unpredictable.
+You come.
+Your presence is a blowtorch, your smile is a crowbar
+You work open my box and discover the leaks, but you don’t patch them up.
+Instead, you celebrate them, nurturing each one good and bad.
+Each is accepted and forms part of a growing garden that defines me. You cultivate it.
+Some emotions insist on hiding -
+Like a shy animal from a hunter they protect themselves.
+or maybe a baby deer that hasn’t figured out how to walk yet
+wobbly knees my emotions are.
+feeble like the first 3 matches attempting to light a fire
+when will they ignite? I don’t know.
+Patience - the gardener's greatest tool.
+
+    `
+  </script>
+
+</body>
+
+</html>
