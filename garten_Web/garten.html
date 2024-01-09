@@ -4,24 +4,25 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Unity WebGL Player | Meanergarten</title>
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-    <link rel="stylesheet" href="../app.css">
+            <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+            <link rel="stylesheet" href="../app.css">
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
   </head>
   <body>
-    <!--Navigation bar-->
-    <div id="nav-placeholder">
-    
-    </div>
-    
-    <script>
-      $(function () {
-        $("#nav-placeholder").load("../gamenav.html");
-      });
-    </script>
+        <!--Navigation bar-->
+        <div id="nav-placeholder">
+        
+        </div>
+        
+        <script>
+          $(function () {
+            $("#nav-placeholder").load("../gamenav.html");
+          });
+        </script>
+        <!--end of Navigation bar-->
     <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" width=960 height=600></canvas>
+      <canvas id="unity-canvas" width=1160 height=600></canvas>
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
         <div id="unity-progress-bar-empty">
@@ -74,7 +75,7 @@
           mobileWarning.style.display = "none";
         }, 5000);
       } else {
-        canvas.style.width = "960px";
+        canvas.style.width = "1160px";
         canvas.style.height = "600px";
       }
       loadingBar.style.display = "block";
